@@ -15,7 +15,7 @@ function CreateTask({ onTaskCreated }) {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "/tasks", newTask",
+        "/tasks",
         {
           title,
           description,
