@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
-import axios from "axios";
+import axios from "../api/axios";
 import CreateTask from "../components/CreateTask";
 import EditTask from "../components/EditTask";
 import { FaTrash, FaEdit } from "react-icons/fa";
@@ -44,7 +44,7 @@ function Dashboard() {
   const fetchTasks = async (token = getToken()) => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/tasks", {
+      const res = await axios.get("/tasks", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);
@@ -61,7 +61,7 @@ function Dashboard() {
       setActionInProgress(true);
       const token = getToken();
       await axios.put(
-        `http://localhost:5000/api/tasks/${taskId}`,
+        `/tasks/${taskId}`,
         { completed: !currentStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -83,7 +83,7 @@ function Dashboard() {
     const token = getToken();
     try {
       setActionInProgress(true);
-      await axios.delete(`http://localhost:5000/api/tasks/${taskToDelete._id}`, {
+      await axios.delete(`/tasks/${taskToDelete._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks((prev) => prev.filter((task) => task._id !== taskToDelete._id));
@@ -116,7 +116,7 @@ function Dashboard() {
     try {
       const token = getToken();
       const res = await axios.post(
-        "http://localhost:5000/api/tasks",
+        "/tasks",
         {
           title: task.title,
           description: task.description,
