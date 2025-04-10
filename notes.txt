@@ -1,0 +1,16 @@
+https://tailwindcss.com/docs/installation/using-vite
+use above website for installation and to ensure TailwindCSS works properly with your Vite-React app.
+
+run using npm run dev
+
+Full Connection Recap
+✅ Frontend sends request ➡️
+✅ Axios hits backend route ➡️
+✅ Backend runs controller logic ➡️
+✅ MongoDB stores user ➡️
+✅ Response sent back to frontend ➡️
+✅ UI shows "Registered successfully!"
+
+// to test 
+
+run terminal -> node cronJobs/testReminder.js
