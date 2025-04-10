@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../api/axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -21,7 +21,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/login", formData);
+      const res = await axios.post("/login", formData);
       localStorage.setItem("token", res.data.token);
       setMessage("✅ Logged in successfully!");
       setTimeout(() => navigate("/dashboard"), 1500);
