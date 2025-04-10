@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 
 function CreateTask({ onTaskCreated }) {
   const [title, setTitle] = useState("");
@@ -15,7 +15,7 @@ function CreateTask({ onTaskCreated }) {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5000/api/tasks",
+        "/tasks", newTask",
         {
           title,
           description,
