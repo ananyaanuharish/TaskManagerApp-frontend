@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://taskmanagerapp-backend-1.onrender.com",
+  baseURL: "https://taskmanagerapp-backend-1.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },
