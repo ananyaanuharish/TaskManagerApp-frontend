@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 import { FaTimes } from "react-icons/fa";
 
 export default function EditTask({ task, onCancel, onUpdate }) {
@@ -17,7 +17,7 @@ export default function EditTask({ task, onCancel, onUpdate }) {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        `http://localhost:5000/api/tasks/${task._id}`,
+        `/tasks/${task._id}`,
         {
           title,
           description,
