@@ -60,7 +60,7 @@ function Home() {
           className="text-4xl font-extrabold text-violet-700 mb-4"
           variants={itemVariants}
         >
-          Welcome to Task Manager App📝
+          Welcome to Taskify Pro📝
         </motion.h1>
         <motion.p
           className="text-lg text-gray-700 font-medium"
