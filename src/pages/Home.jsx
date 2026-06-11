@@ -68,7 +68,7 @@ function Home() {
         >
           A powerful productivity app built with ❤️ by{" "}
           <span className="font-bold text-pink-600">ANANYA A H</span>, a
-          passionate Fullstack Web Developer🚀.
+          passionate Fullstack Developer🚀.
         </motion.p>
         <motion.div
           className="mt-6 flex justify-center items-center text-gray-500 text-sm gap-2"
